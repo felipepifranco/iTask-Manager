@@ -24,7 +24,15 @@ label{
     font-weight: bold;
 }
 
-form{
+textarea{
+    font-family: 'Poppins', sans-serif;
+}
+
+input{
+    font-family: 'Poppins', sans-serif;
+}
+
+.form{
     display: flex;
     flex-direction: column;
 }
@@ -40,6 +48,7 @@ form{
     border-radius: 10px;
     border-color: var(--cinzinha);
 }
+
 
 .criacao-baixo{
     display: flex;
