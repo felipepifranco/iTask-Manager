@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;900&family=Poppins:wght@400&display=swap');
+
+:root {
+  --cinzinha: #A3A3A3;
+  --roxo: #800080;
+}
+
+
+html{
+    font-family: 'Poppins', sans-serif;
+}
+
+main {
+    margin: 0;           
+    min-height: 100vh;   
+    display: flex;       
+    align-items: center;
+    flex-direction: column;
+}
+
+label{
+    font-size: 20px;
+    color: var(--roxo);
+    font-weight: bold;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+.criacao-tarefa{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    gap: 15px; 
+    padding: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: var(--cinzinha);
+}
+
+.criacao-baixo{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.tarefa-descricao{
+    width: 50%;
+}
+
+#adiciona-tarefa{
+    background-color: var(--roxo);
+    border-color: black;
+    color: white;
+    font-weight: bolder;
+    border-radius: 10px;
+    width: 200px;
+    height: 50px;
+    align-self: center;
+}
+
+.lista-tarefas{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.card-tarefa{
+    display: flex;
+    flex-direction: row;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: var(--cinzinha);
+    border-width: 1px;
+    padding: 10px;
+    gap: 20px;
+    align-items: center;
+}
+
+
+.tarefa-conteudo{
+    flex-grow: 1;
+}
+.tarefa-checkbox{
+    transform: scale(1.5);;
+}
+
+.tarefa-titulo{
+    display: flex;
+    align-items: center;
+    h3{
+        width: 70%;
+        color: var(--roxo);
+        padding: 1px;
+        margin: 0;
+    }
+    .info{
+        color: var(--cinzinha);
+    }
+}
