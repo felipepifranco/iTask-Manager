@@ -46,25 +46,38 @@ class tarefa{
 			temDataLimite = false
 		else
 			temDataLimite = true;
-		
+
         const cardTarefa = document.createElement('div');
 		cardTarefa.className = 'card-tarefa';
         cardTarefa.innerHTML = `
             <input type="checkbox" class="tarefa-checkbox">
 			<div class="tarefa-conteudo">
 				<div class="tarefa-titulo">
-						<h3>${this.nome}</h3>
+						<h3 id="nome-tarefa">${this.nome}</h3>
 						<span class="info">Criado em: ${this.tratarData(this.dataCriacao)}</span>
 				</div>
-				<p class="task-description">${this.descricao}</p>
+				<p class="tarefa-descricao">${this.descricao}</p>
 				${temDataLimite ? `
-					<div class="task-footer">
+					<div class="tarefa-baixo">
 							<span>Data Limite: ${this.tratarData(this.dataLimite)}</span>
 					</div>
 				` : ''}
 			</div>
-			<i class="fa-solid fa-trash-can"></i>
+			<button type="button" class="btn-deletar">
+				<i class="fa-solid fa-trash-can"></i>
+			</button>
             `;
+		//fazer a checkbox funcionar
+		const checkbox = cardTarefa.querySelector('.tarefa-checkbox') as HTMLInputElement;
+		checkbox.addEventListener('click', () => {
+			this.alternarEstadoConcluido();
+			cardTarefa.classList.toggle('tarefa-concluida');
+		});
+		// fazer o lixo funcionar
+		const btnApagar = cardTarefa.querySelector('.btn-deletar');
+		btnApagar?.addEventListener('click', () => {
+			cardTarefa.remove();
+		});
         return cardTarefa;
     }
 }
@@ -92,7 +105,6 @@ class criadorTarefa{
 
 
     configurarEventos() {
-        // Ouve o clique do botão
         this.botaoAdicionar.addEventListener('click', () => {
 				if (!this.inputNome.value.trim()) {
 					alert("Erro! Insira um nome para a tarefa");
@@ -102,6 +114,7 @@ class criadorTarefa{
 				document.getElementById('lista-tarefas')?.appendChild(novaTarefa.renderizar());
 				this.limparInputs();
 			});
+		
     }
 }
 new criadorTarefa();

@@ -103,3 +103,18 @@ form{
         color: var(--cinzinha);
     }
 }
+
+.tarefa-concluida{
+    h3{
+        text-decoration: line-through
+    }
+    .tarefa-descricao{
+        color: var(--cinzinha);
+    }
+
+}
+
+.btn-deletar{
+    background-color: transparent;
+    border-style: none;
+}
