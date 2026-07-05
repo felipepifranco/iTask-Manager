@@ -4,34 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iTaks Manager</title>
-		<link rel="stylesheet" href="style.css">
-		<script src="https://kit.fontawesome.com/2bf1383b42.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://kit.fontawesome.com/2bf1383b42.js" crossorigin="anonymous"></script>
+	<script src="app.js" defer></script>
 </head>
 <body>
 <main>
 	<div class="criacao-tarefa">
 		<div class="criacao-cima">
-			<form class="linha-nome">
+			<div class="linha-nome form">
 				<label class="label-criacao" >Nome da Tarefa</label>
-				<input type="text" class="input-criacao">
-			</form>
+				<input type="text" class="input-criacao" id="input-nome">
+			</div>
 		</div>
-		<div class="criacao-baixo">
-			<form class="tarefa-descricao">
+		<div class="criacao-baixo"> 
+			<div class="tarefa-descricao form">
 				<label class="label-criacao" >Descrição da Tarefa</label>
-				<textarea id="input-descricao" name="description" rows="4">
-					
-				</textarea>
-			</form>
-			<form class="data-limite">
+				<textarea id="input-descricao" name="description" rows="4"></textarea>
+			</div>
+			<div class="data-limite form">
 				<label class="label-criacao" >Data Limite</label>
-				<input type="datetime-local" class="input-criacao">
-			</form>
+				<input type="datetime-local" class="input-criacao" id="input-data" required>
+			</div>
 			<button id="adiciona-tarefa">ADD TAREFA</button>
 		</div>
 	</div>
 	<h1>Tarefas</h1>
-	<section class="lista-tarefas">
+	<section id	="lista-tarefas">
 		<div class="card-tarefa">
 				<input type="checkbox" class="tarefa-checkbox">
 				<div class="tarefa-conteudo">
@@ -39,8 +38,8 @@
 								<h3>Nome da Tarefa</h3>
 								<span class="info">Criado em: 04/07/2026, 23:13:49</span>
 						</div>
-						<p class="task-description">Descrição da Tarefa</p>
-						<div class="task-footer">
+						<p class="tarefa-description">Descrição da Tarefa</p>
+						<div class="tarefa-footer">
 								<span>Data Limite: 04/07/2026</span>
 						</div>
 				</div>
